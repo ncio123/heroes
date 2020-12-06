@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom
+@import "./themes/variables.scss";
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    color: $font-color;
+    font-style: $font-size;
+    letter-spacing: $letter-spacing;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: $primary-color;
+}
+
+a {
+    color: $font-color;
+
+    &:hover,
+    &:active,
+    &.active {
+        color: $font-color;
+        text-decoration: underline !important;
+    }
+}

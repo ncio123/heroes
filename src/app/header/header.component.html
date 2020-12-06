@@ -1,0 +1,14 @@
+<header class="container">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a [routerLink]="['/']" title="DEV-ECON">DEV-ECON</a>
+            <img imageLazyLoading="/assets/svgs/Union 1.svg" alt="DEV-ECON" />
+        </div>
+
+        <ul class="navbar-nav">
+            <li class="nav-item" *ngFor="let option of menu">
+                <a [routerLink]="[option.link]" [title]="option.name">{{option.name}}</a>
+            </li>
+        </ul>
+    </nav>
+</header>

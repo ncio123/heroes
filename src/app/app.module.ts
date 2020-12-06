@@ -1,16 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderModule } from 'src/app/header/header.module';
+import { FooterModule } from 'src/app/footer/footer.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    AppRoutingModule,
+    HeaderModule,
+    FooterModule,
+    HttpClientModule,
+    BrowserTransferStateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,24 @@
+<div class="row" *ngIf="(Heroes$ | async) as heroes">
+    <div class="col-6 col-md-3" *ngFor="let hero of heroes; index as index; trackBy: trackByFunction; ">
+        <div class="card">
+            <a [routerLink]="['/', hero.id]" queryParamsHandling="merge"
+                [title]="hero.name">{{hero.name}}</a>
+
+            <figure class="card-img-top">
+                <img data-sizes="auto" data-srcset="{{hero.imagesLazySizes()}}" class="lazyload"
+                    alt="{{hero.name}}" />
+                <figcaption>{{hero.name}}</figcaption>
+            </figure>
+
+            <div class="card-body">
+                <ul>
+                    <li>Intelligence: <strong>{{hero.powerstats.intelligence || 'N'}}</strong></li>
+                    <li>Speed: <strong>{{hero.powerstats.speed || 'N'}}</strong></li>
+                    <li>Power: <strong>{{hero.powerstats.power || 'N'}}</strong></li>
+                    <li>Gender: <strong>{{hero.appearance.gender || 'N'}}</strong></li>
+                    <li>Race: <strong>{{hero.appearance.race || 'N'}}</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
